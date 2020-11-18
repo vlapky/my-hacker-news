@@ -12,7 +12,7 @@ const Post = ({ objectID, author, title, created_at, points, num_comments, url }
                 <span>{created_time}|</span>
                 <span>{num_comments} комментариев|</span>
                 <span>{points} очков|</span>
-                <a href={url}>Ссылка на источник</a>
+                <a href={url} target='_blank'>Ссылка на источник</a>
             </article>
         </li>
     );
