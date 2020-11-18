@@ -6,7 +6,7 @@ const SearchInput = ({ searchQuery , handleSearchChange, getSearch }) => {
             <input 
             value={searchQuery} 
             onChange={handleSearchChange} 
-            type="text"
+            type="search"
             placeholder='Поиск...'/>
         </div>
     )
