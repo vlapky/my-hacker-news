@@ -4,8 +4,8 @@ const Pagination = ({ onClick, page, lastPage }) => {
 
     return (
         <div>
-            { page !== 0 && <button onClick={onClick} data-name='prev'>{'<<'}</button>}
-            { page !== lastPage - 1 && <button onClick={onClick} data-name='next'>{'>>'}</button>}
+            <button disabled={page === 0} onClick={onClick} data-name='prev'>{'<<'}</button>
+            <button disabled={page === lastPage-1} onClick={onClick} data-name='next'>{'>>'}</button>
         </div>
     )
 }
