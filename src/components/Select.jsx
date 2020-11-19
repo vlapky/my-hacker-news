@@ -1,10 +1,11 @@
 import React from 'react';
+import '../styles/Select.css';
 
 const Select = ({ HITS_SELECT, hitsPerPage, handleHitsSelectChange }) => {
     return(
-        <select onChange={handleHitsSelectChange}>
+        <select className='select' onChange={handleHitsSelectChange}>
            { HITS_SELECT.map(({ label, value }) => 
-           <option key={`${label}-${value}`} value={value}> {label} </option>)}
+           <option className='select_option' key={`${label}-${value}`} value={value}> {label} </option>)}
         </select>
     )
 }

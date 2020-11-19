@@ -3,6 +3,8 @@ import Post from './components/Post';
 import SearchInput from './components/SearchInput'
 import Select from './components/Select';
 import Pagination from './components/Pagination';
+import Summary from './components/Summary';
+import Header from './components/Header';
 import './App.css';
 
 const BASE_PATH = 'https://hn.algolia.com/api/v1';
@@ -45,7 +47,7 @@ class App extends Component {
       .then(res => res.json())
       .then(result => this.setState({ result }))
       .catch(error => error)
-      
+
   }
 
   handleSearchChange = ({ target: { value } }) => {
@@ -97,27 +99,33 @@ class App extends Component {
     const { searchQuery, result, hitsPerPage } = this.state;
     const { hits = [], page, nbPages } = result;
 
-    //console.log(result);
+    console.log(result);
 
     return (
       <div className='wrapper'>
-        <h1>Hacker News</h1>
-        <SearchInput
-          searchQuery={searchQuery}
-          handleSearchChange={this.handleSearchChange}
-          getSearch={this.getSearch}
-        />
+        <Header />
         <Select
           HITS_SELECT={HITS_SELECT}
           hitsPerPage={hitsPerPage}
           handleHitsSelectChange={this.handleHitsSelectChange}
+        />
+        <SearchInput
+          searchQuery={searchQuery}
+          handleSearchChange={this.handleSearchChange}
+          getSearch={this.getSearch}
         />
         <Pagination
           onClick={this.handlePageChange}
           page={page}
           lastPage={nbPages}
         />
-        <ul>
+        <Summary
+          hitsPerPage={hitsPerPage}
+          page={page+1}
+          lastPage={nbPages}
+        />
+
+        <ul className='hits'>
           {hits.map(({ objectID, author, title, created_at, points, num_comments, url }) =>
             <Post
               key={objectID}

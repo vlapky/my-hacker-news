@@ -1,0 +1,25 @@
+.buttons {
+    display: inline-flex;
+    margin: 1em 1em 0 1em;
+    
+}
+
+.prev_button {
+    border-radius: 30% 0 0 30%;
+    color: #fff;
+    background-color: #8e00ff;
+}
+
+.next_button {
+    border-radius: 0 30% 30% 0;
+    color: #fff;
+    background-color: #8e00ff;
+}
+
+.prev_button:disabled {
+    background-color: #808080;
+}
+
+.next_button:disabled {
+    background-color: #808080;
+}

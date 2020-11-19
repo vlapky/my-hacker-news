@@ -1,0 +1,25 @@
+.post {
+    list-style-type: none;
+}
+
+.read_link {
+    display: inline-flex;
+    text-decoration: none;
+    background-color: #8919e6;
+    border: 3px solid #808080;
+    border-radius: 15%;
+    color: #fff;
+    padding: 2px;
+}
+
+.read_link:visited {
+    color: #fff;
+}
+
+hr {
+    margin: 15px 0 15px 0;
+    padding-bottom: 1px;
+    background-color: #9b9b9b;
+    border-bottom:1px solid #F4F4F4;
+    width: 90vw;
+    }
